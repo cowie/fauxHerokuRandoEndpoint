@@ -14,6 +14,7 @@ router.get('/getFauxProductData', function(req, res, next){
   const valueSets = req.query.maxQuantity;
   /*[
     {
+      itemNumber:'',
       integerValue: '',
       dateTimeValue:'',
       dollarValue:'',
@@ -22,6 +23,7 @@ router.get('/getFauxProductData', function(req, res, next){
   const returnList = [];
   for(let x=0;x<valueSets;x++){
     const valueObj = {};
+    valueObj.itemNumber = x+1;
     valueObj.integerValue = Math.floor(Math.random() * intBoundMax) + intBoundMin;
     valueObj.dollarValue = Math.floor(((Math.random() * dollarBoundMax) + dollarBoundMin)* 100) / 100;
     valueObj.dateTimeValue = randomDate(new Date(minimumDateYr, minimumDateMo, minimumDateDay), new Date());
