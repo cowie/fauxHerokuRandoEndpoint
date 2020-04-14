@@ -9,13 +9,9 @@ const minimumDateYr = 2019;
 const minimumDateMo = 1;
 const minimumDateDay = 1;
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
 
 router.get('/getFauxProductData', function(req, res, next){
-  const valueSets = req.query.quantity;
+  const valueSets = req.query.maxQuantity;
   /*[
     {
       integerValue: '',
@@ -32,6 +28,7 @@ router.get('/getFauxProductData', function(req, res, next){
     returnList.push(valueObj);
   }
   //res.send(200);
+  console.log(returnList);
   res.json(returnList);
 });
 
